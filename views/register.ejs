@@ -1,0 +1,98 @@
+<%- include("partials/header") %>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="alert alert-danger" style="display: none" id="error">
+            <strong>Warning!</strong> Please enter correct Username</a>.
+        </div>
+        <div class="pro-form-2">
+            <form class="form-signin" id='registerForm' action="/register" method="POST" enctype="multipart/form-data">
+                <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>
+                <div class="form-group">
+                    <label for="inputUsername" class="sr-only">Username</label>
+                    <input type="text" id="inputUsername" name="username" class="form-control" placeholder="username" 
+                        autofocus>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword" class="sr-only">Password</label>
+                    <input type="password" id="inputPassword" class="form-control" name="password"
+                        placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label for="image" class="sr-only">Image Url</label>
+                    <input class="form-control" type="file" id="image" name="image" accept="image/*" placeholder="Image Url" required>
+                </div>
+                <div class="form-group">
+                    <label for="inputFirstname" class="sr-only">firstname</label>
+                    <input class="form-control" id="inputFirstname" type="text" name="firstName"
+                        placeholder="first name" autofocus>
+                </div>
+                <div class="form-group">
+                    <label for="inputLastname" class="sr-only">lastname</label>
+                    <input class="form-control" id="inputLastname" type="text" name="lastName" placeholder="last name"
+                        autofocus>
+                </div>
+                <div class="form-group">
+                    <label for="inputMobile" class="sr-only">mobile</label>
+                    <input class="form-control" id="inputMobile" type="number" name="mobile" placeholder="mobile number"
+                        autofocus>
+                </div>
+                <div class="form-group" name = 'form1'>
+                    <label for="inputEmail" class="sr-only">email</label>
+                    <input class="form-control" id="inputEmail" type="text" name="email" placeholder="email" autofocus>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="gridCheck" onclick="ShowHideDiv(this)">
+                      <label class="form-check-label" for="gridCheck">
+                        Select only if you are an Admin User
+                      </label>
+                    </div>
+                  </div>
+                <div class="form-group">
+                    <label for="inputAdmin" class="sr-only">admincode</label>
+                    <input class="form-control" id="inputAdmin" style="display: none" type="password" name="adminCode" placeholder="enter admincode"
+                        autofocus>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+                <!-- <a class="btn btn-lg btn-danger btn-block" href="/auth/google">Google+</a> -->
+            </form>
+            <div class="form-signin">
+                <a href="/campgrounds">Go Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    //Hide-Unhide the Admin Secret Textfield
+    var checkBox = document.getElementById('gridCheck')
+    var textBox = document.getElementById('inputAdmin');
+        function ShowHideDiv(checkBox) {
+            var textBox = document.getElementById("inputAdmin");
+            textBox.style.display = checkBox.checked ? "block" : "none";
+        }
+    
+    //Email Validation
+    // var emailField = document.getElementById('inputEmail').value;
+    //     function ValidateEmail(emailField) {
+    //         var emailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    //         if (emailField.match(emailformat)) {
+    //             document.form1.email.focus();
+    //             return true;
+    //         }
+    //         else {
+    //             alert("You have entered an invalid email address!");
+    //             return false;
+    //         }
+    //     }
+
+    // var name = document.getElementById('inputUsername').value
+    // var password = document.getElementById('inputPassword').value
+    // var registerForm = document.getElementById('registerForm')
+    // var errorElement = document.getElementById('error')
+
+    </script>
+
+<%- include("partials/footer") %>
