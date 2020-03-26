@@ -22,15 +22,17 @@ indexRoutes = require('./routes/index')
 // keys = require('./config/keys');
 
 //mongo connection
-var url = process.env.DATABASEURL;
+//var url = process.env.DATABASEURL;
 //mongoose.connect("mongodb://localhost:27017/pro_camp_v12_4",{ useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
-mongoose.connect( url ,
+mongoose.connect( process.env.DATABASEURL,
 {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
     useFindAndModify: false
 }).then(() => console.log('connected to DB')).catch((err) => console.log('ERROR: ', err.message))
+
+console.log('This is the mongo URL:     ', process.env.DATABASEURL);
 
 //seedDB();  //seed the database
 app.use(bodyParser.urlencoded({extended: true}));
