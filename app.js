@@ -28,7 +28,8 @@ mongoose.connect( url ,
 {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true
+    useCreateIndex: true,
+    useFindAndModify: false
 }).then(() => console.log('connected to DB')).catch((err) => console.log('ERROR: ', err.message))
 
 //seedDB();  //seed the database
