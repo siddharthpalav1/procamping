@@ -24,7 +24,7 @@ indexRoutes = require('./routes/index')
 //mongo connection
 //var url = process.env.DATABASEURL;
 //mongoose.connect("mongodb://localhost:27017/pro_camp_v12_4",{ useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
-mongoose.connect( process.env.DATABASEURL,
+mongoose.connect('mongodb+srv://procamp72:procamp72password@cluster0-3dour.mongodb.net/test?retryWrites=true&w=majority',
 {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -32,7 +32,8 @@ mongoose.connect( process.env.DATABASEURL,
     useFindAndModify: false
 }).then(() => console.log('connected to DB')).catch((err) => console.log('ERROR: ', err.message))
 
-console.log('This is the mongo URL:     ', process.env.DATABASEURL);
+console.log('This is the mongo URL:     ', typeof(process.env.DATABASEURL));
+console.log(process.env.DATABASEURL);
 
 //seedDB();  //seed the database
 app.use(bodyParser.urlencoded({extended: true}));
