@@ -71,5 +71,5 @@ app.use(indexRoutes);
 //app.use(googleauth);                             //Google signon feature
 
 app.listen(port, function(req, res){
-    console.log("Procamp server started");
+    console.log("ProCamping server started");
 });
